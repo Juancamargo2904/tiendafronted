@@ -1,0 +1,38 @@
+<div class="shadow border p-4">
+  @if (editUserId){
+    <h2 class="text-xl font-semibold">Agregar Nuevo Producto</h2>
+  }
+  @else {<h2 class="text-xl font-semibold">Agregar Nuevo Producto</h2>
+}
+    <form [formGroup]="userForm">
+        <div class="flex flex-wrap">
+                <mat-form-field class="w-full">
+                    <mat-label>Nombre del Producto</mat-label>
+                    <input type="text" matInput formControlName="name"/>
+                </mat-form-field>
+                <mat-form-field class="w-full">
+                  </mat-form-field>
+                  <mat-form-field class="w-full">
+                    <mat-label>Stock del Producto</mat-label>
+                    <input type="number" matInput formControlName="age"/>
+                  </mat-form-field>
+                  <mat-form-field class="w-full">
+                    <mat-label>Codigo del Producto </mat-label>
+                    <input type="text" matInput formControlName="address"/>
+                  </mat-form-field>
+                  <mat-form-field class="w-full">
+                    <mat-label>Contraseña del Producto</mat-label>
+                    <input type="password" matInput formControlName="password"/>
+                  </mat-form-field>
+        </div>
+        <div class="flex justify-center">
+          @if (editUserId){
+            <button mat-raised-button color="primary" (click)="updateUser()">Update</button>
+          }
+          @else {
+            <button mat-raised-button color="primary" (click)="addUser()">Agregar Producto</button>
+        }
+            
+        </div>
+    </form>
+</div>

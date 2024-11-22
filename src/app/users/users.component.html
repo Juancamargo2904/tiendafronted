@@ -1,0 +1,29 @@
+<div class="shadow p-4 border">
+   <div class="flex justify-between p-4"> 
+    <h2 class="text-xl font-semibold">Nuevo Producto</h2>  
+    <button mat-raised-button color="primary" routerLink="/users/add">Agregar Producto</button>
+    </div>
+    <table >
+        <thead >
+            <tr>
+                <th>Nombre del Producto</th>
+                <th>Stock del Producto</th>
+                <th>Codigo del Prodducto</th>
+                <th>Acciones de Ediccion</th>
+            </tr>
+        </thead>
+        <tbody class = "w-full">
+            @for(user of users; track $index){
+                <tr>
+                    <td>{{user.name}}</td>
+                    <td>{{user.age}}</td>
+                    <td>{{user.address}}</td>
+                    <td>
+                        <button mat-raised-button color="accent" class="mr-4" [routerLink]="'/users/'+user._id">Editar Producto</button> 
+                        <button mat-raised-button color="warn" (click)="delete(user._id!)">Eliminar Producto</button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
